@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body style="text-align: center;">
+		<div style="border:1px solid black;height: 500px;" >
+			<form>
+			<h1> My shopping list </h1>
+			
+				 Enter a new item:<input  /> <button id="add">Add item</button>
+				 <ul id="shoppinglists">
+				 	<li>hello</li>
+				 </ul>
+			</form>
+			
+			
+		</div>
+		<script>
+			var addItem =  document.getElementById('add');
+			var ulAdd = document.getElementById('shoppinglists');
+			
+			var cnt=0;
+			
+			addItem.addEventListener('click',function(){
+				 var obj2 = document.createElement('p');
+			 obj2.innerHTML = 'hello'+cnt++;
+			 add.parentNode.appendChild(obj2);
+			  debugger;
+			});
+			
+//			addItem.onclick = function(){
+//				//动态添加li
+//			 debugger;
+//			 
+//			 var obj2 = document.createElement('p');
+//			 obj2.innerHTML = 'hello'+cnt++;
+//			 add.parentNode.appendChild(obj2);
+//			 
+//			var obj = document.createElement('li');
+//
+//			obj.innerHTML='hello W';
+//			ulAdd.appendChild(obj);
+
+			
+			 
+		//	}
+			
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>动画</title>
+	</head>
+	<body>
+		<canvas class="isCanvas"></canvas>
+		<script>
+			var canvas = document.querySelector('.isCanvas');
+			var ctx  = canvas.getContext('2d');
+			
+			var width = canvas.width = window.innerWidth;
+			var height = canvas.height = window.innerHeight;
+			
+			
+			
+			var image = new Image();
+			image.src = 'img/walk-right.png';
+			
+			ctx.beginPath();
+			ctx.fillStyle='rgb(0,0,0)';
+			ctx.fillRect(0,0,width,height);
+			
+			image.onload = draw;
+			
+			//平移画布
+ 			ctx.translate(width/2,height/2);
+			
+			var posX = 0; 
+			var startX=0;
+			
+			function draw(){
+				
+				ctx.fillStyle='rgb(0,0,0)';
+				ctx.fillRect(-width/2,0,width,height);
+				ctx.drawImage(image,posX*102,0,102,image.height,startX,0,102,image.height);
+				
+				
+				
+				if(startX%13===0){
+					if(posX>4){
+					posX = 0;
+				}else{
+					posX++;
+				}
+				 
+				}
+				
+				if(startX>width/2){
+					startX=- width/2-102;
+				}else{
+					startX+=2;
+				}
+			
+				
+				requestAnimationFrame(draw);
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>
